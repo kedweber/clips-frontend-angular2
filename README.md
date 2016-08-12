@@ -1,5 +1,8 @@
 # CLiPs Cross-Platform Mobile Angular2 Frontend
 
+[//]: # https://travis-ci.org/
+[//]: # [![Build Status][travis-badge]][travis-badge-url]
+
 ## Description
 
 This repository is meant as a skeleton framework for a private production, CLiPs, which is designed to assist educational 
@@ -8,7 +11,8 @@ CLiPs project, it will also help others who want to create a multi-platform, res
 in Angular 2, while incorporating test driven development in a transpiled hard-typed JavaScript.
 
 The database here will be a severally crippled flat JSON file version simply for the sake of example. If you have an interest in this educational 
-profiling/reporting system, please do contact me via the [https://github.com/kedweber/clips-frontend-angular2/issues](issues page) 
+profiling/reporting system, please do contact me via the 
+[issues page](https://github.com/kedweber/clips-frontend-angular2/issues) 
 leaving contact information and/or your PRs (Personal Requests).
 
 ### The Environment
@@ -277,6 +281,27 @@ npm install -g gulp
 
 Karma is a JavaScript test runner, which we can use to generate our test reports. It can be setup to run in multiple
 browsers. Karma supports multiple test frameworks, including Jasmine.
+
+**NOTE:** [Travis-CI](https://travis-ci.org/) can not debug Karma. In order to work around this limitation and still 
+have build badges on your repository, you will need to create your travis-ci configuration file; ```.travis.yml```, 
+as follows:
+
+[//]: # see saucelabs
+
+```
+language: node_js
+node_js:
+    - '0.10.33'
+    before_script:
+    - 'export CHROME_BIN=chromium-browser'
+    - 'sh -e /etc/init.d/xvfb start'
+    - 'npm install -g bower karma grunt-cli jshint'
+    - 'npm install' # install npm packages
+    - 'bower install' # install bower packages
+    
+after_script:
+    - 'grunt' # or other command for build, run tests, etc
+```
 
 ##### Jasmine
 
