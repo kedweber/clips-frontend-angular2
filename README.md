@@ -1,7 +1,9 @@
 # CLiPs Cross-Platform Mobile Angular2 Frontend
 
+<!--
 [//]: # https://travis-ci.org/
 [//]: # [![Build Status][travis-badge]][travis-badge-url]
+-->
 
 ## Description
 
@@ -30,9 +32,10 @@ Here are some of the tools we will be using to develop our web and mobile apps.
 * Exporting iOS and Android Apps
     * Ionic
 * Test Driven Development
-    * Karma
-    * Jasmine
-    * PhantomJS
+    * [Karma](https://karma-runner.github.io/) Testing & Continuous Integration. Options; [Travis](https://karma-runner.github.io/1.0/plus/travis.html), 
+     [Jenkins](https://karma-runner.github.io/1.0/plus/jenkins.html) or [Semaphore](https://karma-runner.github.io/1.0/plus/semaphore.html)
+    * [Jasmine](http://jasmine.github.io/) - Behavior Driven Development. Other options; Mocha, QUnit...
+    * [PhantomJS](http://phantomjs.org/) - Headless WebKit browser scriptable with a JavaScript API. 
     * Protractor
     * Angular Mocks
     
@@ -90,7 +93,7 @@ name: (angular2) CLiPS-FrontEnd
 version: (1.0.0) 0.0.1
 description: The CLiPs Angular2 Front-end
 entry point: (index.js) gulpfile.js
-test command:
+test command: karma start --single-run --browsers PhantomJS
 git repository: https://github.com/kedweber/clips-frontend-angular2.git
 keywords: CLiPs, Angular2, Ionic, Karma, Jasmine, Unit Testing, Mobile, Multi-platform, Educational
 author: kedweber
@@ -104,7 +107,7 @@ About to write to /Users/ked/projects/angular2/package.json:
   "description": "The CLiPs Angular2 Front-end",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
@@ -284,23 +287,29 @@ browsers. Karma supports multiple test frameworks, including Jasmine.
 
 **NOTE:** [Travis-CI](https://travis-ci.org/) can not debug Karma. In order to work around this limitation and still 
 have build badges on your repository, you will need to create your travis-ci configuration file; ```.travis.yml```, 
-as follows:
+as follows or consult the [documentation in depth](https://docs.travis-ci.com/user/languages/javascript-with-nodejs):
 
-[//]: # see saucelabs
+<!-- [//]: # see saucelabs -->
 
 ```
 language: node_js
 node_js:
-    - '0.10.33'
-    before_script:
+    - '4' # for karma-runner and Travis-CI
+    #- '0.10.33'
+before_script:
+    # run on chrome
     - 'export CHROME_BIN=chromium-browser'
+    # run on firefox
+    #- export DISPLAY=:99.0
+    # and change package.json's test command to: karma start --browsers Firefox --single-run
     - 'sh -e /etc/init.d/xvfb start'
-    - 'npm install -g bower karma grunt-cli jshint'
+    - 'npm install -g bower karma gulp jshint' # grunt-cli if using grunt instead of gulp
     - 'npm install' # install npm packages
     - 'bower install' # install bower packages
-    
+script:
+    - gulp # run the gulpfile.js
 after_script:
-    - 'grunt' # or other command for build, run tests, etc
+    #- 'grunt' # or other command for build, run tests, etc
 ```
 
 ##### Jasmine
