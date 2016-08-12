@@ -32,24 +32,28 @@ Here are some of the tools we will be using to develop our web and mobile apps.
 * Exporting iOS and Android Apps
     * Ionic
 * Test Driven Development
-    * [Karma](https://karma-runner.github.io/) Testing & Continuous Integration. Options; [Travis](https://karma-runner.github.io/1.0/plus/travis.html), 
+    * [Karma](https://karma-runner.github.io/) Testing & Continuous Integration. Other options; [Travis](https://karma-runner.github.io/1.0/plus/travis.html), 
      [Jenkins](https://karma-runner.github.io/1.0/plus/jenkins.html) or [Semaphore](https://karma-runner.github.io/1.0/plus/semaphore.html)
-    * [Jasmine](http://jasmine.github.io/) - Behavior Driven Development. Other options; Mocha, QUnit...
-    * [PhantomJS](http://phantomjs.org/) - Headless WebKit browser scriptable with a JavaScript API. 
-    * Protractor
-    * Angular Mocks
+    * [Jasmine](http://jasmine.github.io/) - Behavior Driven Development. Other options; [Mocha](http://mochajs.org/), 
+    [QUnit](http://qunitjs.com/)...
+    * [PhantomJS](http://phantomjs.org/) - A scriptable headless WebKit browser with a JavaScript API. 
+    * [Protractor](www.protractortest.org/) - Test Like a User! End to end testing.
+    * [Angular Mocks](https://docs.angularjs.org/api/ngMock) used for injecting services during testing in 
+    [Bower](https://github.com/angular/bower-angular-mocks) and [NPM](https://www.npmjs.com/package/angular-mocks) flavors.
     
 ### Project File Structure
 
 **NOTE**: This section is standard, and will likely be changed to consolidate work with Gulp.
     
     project (folder)
-    |- app
+    |
+    |__ app
     |   |- app.component.js
     |   |- app.module.js
-    |   |- main.js
+    |   |_ main.js
+    |
     |- index.html
-    |- styles.css
+    |_ styles.css
     
 ## Installation
 
@@ -280,12 +284,15 @@ npm install -g gulp
 
 #### Unit Testing
 
-##### Karma
+##### [Karma](https://karma-runner.github.io/)
 
-Karma is a JavaScript test runner, which we can use to generate our test reports. It can be setup to run in multiple
-browsers. Karma supports multiple test frameworks, including Jasmine.
+[Karma](https://karma-runner.github.io/) is a JavaScript test runner, which we can use to generate our test reports. It can be setup to run in multiple
+browsers. Karma supports multiple test frameworks, including [Jasmine](http://jasmine.github.io/). 
 
-**NOTE:** [Travis-CI](https://travis-ci.org/) can not debug Karma. In order to work around this limitation and still 
+Check out the blog post at [Google Testing](http://googletesting.blogspot.com/2012/11/testacular-spectacular-test-runner-for.html) 
+for an interesting insight on why Karma was born.
+
+**NOTE:** This may be passe, but it is reported that [Travis-CI](https://travis-ci.org/) can not debug Karma. In order to work around this limitation and still 
 have build badges on your repository, you will need to create your travis-ci configuration file; ```.travis.yml```, 
 as follows or consult the [documentation in depth](https://docs.travis-ci.com/user/languages/javascript-with-nodejs):
 
@@ -312,19 +319,19 @@ after_script:
     #- 'grunt' # or other command for build, run tests, etc
 ```
 
-##### Jasmine
+##### [Jasmine](http://jasmine.github.io/)
 
-Jasmine is a JavaScript Testing Framework that doesn't depend on any other Javascript Frameworks.
+[Jasmine](http://jasmine.github.io/) is a JavaScript Testing Framework that doesn't depend on any other Javascript Frameworks.
 
-##### PhantomJS
+##### PhantomJS](http://phantomjs.org/)
 
-A "headless" browser, or rather a browser without a user interface in which you can run your Jasmine tests.
+A "headless" browser, or rather a browser without a user interface in which you can run your [Jasmine](http://jasmine.github.io/) tests.
 
-##### Protractor
+##### [Protractor](www.protractortest.org/)
 
-Created by the Google Team and can run end-to-end tests over Jasmine.
+Created by the Google Team and can run end-to-end tests over [Jasmine](http://jasmine.github.io/).
 
-##### Angular Mocks - ngMock modules
+##### [Angular Mocks](https://docs.angularjs.org/api/ngMock) - ngMock modules
 
 [Angular Mocks or ngMock](https://docs.angularjs.org/guide/unit-testing) is a JavaScript Library which allows for
 [Angular Services](http://www.w3schools.com/angular/angular_services.asp)
