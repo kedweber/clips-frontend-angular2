@@ -59,7 +59,7 @@ Here are some of the tools we will be using to develop our web and mobile apps.
 
 
 
-#### Installing Node Package Manager - NPM
+### Installing Node Package Manager - NPM
 
 NPM is a package manager that can assist us with the management of our backend services. Verify that you are running 
 at least node v4.x.x and npm 3.x.x by running node -v and npm -v in a terminal/console window. 
@@ -73,7 +73,7 @@ As with all commands that install packages, the **--dev** flag will cause **devD
 npm update [-g] [<pkg>...]
 ```
 
-#### Initializing NPM in Local Project
+### Initializing NPM in Local Project
 
 Issuing the ```npm init``` command within the project's root folder will render a walk-through where you will be
 prompted through the creation of the package.json file. Note that for the **main** variable, the default value is
@@ -140,7 +140,7 @@ About to write to /Users/ked/projects/angular2/package.json:
 Is this ok? (yes)
 ```
 
-#### Bower
+### Bower
 
 Similar to NPM, Bower is another package manager, but most commonly leans more towards front-end packages.
 
@@ -230,7 +230,7 @@ Now we need to generate our **bower.json** file. Move to your **app** directory 
 
 ```
 
-#### TypeScript Configuration
+### TypeScript Configuration
 
 See the **Install Angular 2** section if you do not wish to use TypeScript, but prefer Dart or vanilla Javascript. You 
 may also wish to opt for reading the manual to [install Angular 2](https://angular.io/docs/js/latest/quickstart.html) with 
@@ -238,7 +238,7 @@ all of its options.
 
 
 
-#### Install Angular 2
+### Install Angular 2
 
 The Angular crew expects you to be able to [install Angular 2](https://angular.io/docs/js/latest/quickstart.html) in 5 minutes. 
 First you will have to decide which language you will use to write your Angular code. I will be using **TypeScript** here, but
@@ -261,7 +261,7 @@ Make sure you have prepared your environment in the previous steps.
     (c) Install packages
     
 
-#### Installing Gulp and Gulp Related Packages Globally
+### Installing Gulp and Gulp Related Packages Globally
 
 Gulp is a ...
 
@@ -280,11 +280,11 @@ command as the super user; using ```sudo```.
 npm install -g gulp
 ```
 
-#### Ionic for Cross-Platform Mobile Development
+### Ionic for Cross-Platform Mobile Development
 
-#### Unit Testing
+## Unit Testing
 
-##### [Karma](https://karma-runner.github.io/)
+### [Karma](https://karma-runner.github.io/)
 
 [Karma](https://karma-runner.github.io/) is a JavaScript test runner, which we can use to generate our test reports. It can be setup to run in multiple
 browsers. Karma supports multiple test frameworks, including [Jasmine](http://jasmine.github.io/). 
@@ -319,19 +319,19 @@ after_script:
     #- 'grunt' # or other command for build, run tests, etc
 ```
 
-##### [Jasmine](http://jasmine.github.io/)
+### [Jasmine](http://jasmine.github.io/)
 
 [Jasmine](http://jasmine.github.io/) is a JavaScript Testing Framework that doesn't depend on any other Javascript Frameworks.
 
-##### PhantomJS](http://phantomjs.org/)
+### [PhantomJS](http://phantomjs.org/)
 
 A "headless" browser, or rather a browser without a user interface in which you can run your [Jasmine](http://jasmine.github.io/) tests.
 
-##### [Protractor](www.protractortest.org/)
+### [Protractor](www.protractortest.org/)
 
 Created by the Google Team and can run end-to-end tests over [Jasmine](http://jasmine.github.io/).
 
-##### [Angular Mocks](https://docs.angularjs.org/api/ngMock) - ngMock modules
+### [Angular Mocks](https://docs.angularjs.org/api/ngMock) - ngMock modules
 
 [Angular Mocks or ngMock](https://docs.angularjs.org/guide/unit-testing) is a JavaScript Library which allows for
 [Angular Services](http://www.w3schools.com/angular/angular_services.asp)
