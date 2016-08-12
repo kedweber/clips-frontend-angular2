@@ -2,23 +2,57 @@
 
 ## Description
 
-## Installation
+This repository is meant as a skeleton framework for a private production, CLiPs, which is designed to assist educational 
+professionals in the Southeast Asian markets. While providing me with the ability of exposing the public both to the 
+CLiPs project, it will also help others who want to create a multi-platform, responsive mobile/web app (Android and iOS), 
+in Angular 2, while incorporating test driven development in a transpiled hard-typed JavaScript.
+
+The database here will be a severally crippled flat JSON file version simply for the sake of example. If you have an interest in this educational 
+profiling/reporting system, please do contact me via the [https://github.com/kedweber/clips-frontend-angular2/issues](issues page) 
+leaving contact information and/or your PRs (Personal Requests).
 
 ### The Environment
 
+Here are some of the tools we will be using to develop our web and mobile apps.
+
+* Package Managers - Getting you started 
     * Node Package Manager
     * Bower
+* Core Javascript Environment
+    * Angular 2
+    * TypeScript
+* Javascript Piping
     * Gulp
+* Exporting iOS and Android Apps
     * Ionic
+* Test Driven Development
     * Karma
     * Jasmine
     * PhantomJS
     * Protractor
     * Angular Mocks
+    
+### Project File Structure
+
+**NOTE**: This section is standard, and will likely be changed to consolidate work with Gulp.
+    
+    project (folder)
+    |- app
+    |   |- app.component.js
+    |   |- app.module.js
+    |   |- main.js
+    |- index.html
+    |- styles.css
+    
+## Installation
+
+
 
 #### Installing Node Package Manager - NPM
 
-NPM is a package manager that can assist us with the management of our backend services.
+NPM is a package manager that can assist us with the management of our backend services. Verify that you are running 
+at least node v4.x.x and npm 3.x.x by running node -v and npm -v in a terminal/console window. 
+Older versions produce errors with our Angular 2 on TypeScript environment.
 
 [Update npm](https://docs.npmjs.com/cli/update) packages by issuing the following command. If the **-g** flag is specified,
 this command will update globally installed packages. This will also install missing packages.
@@ -66,7 +100,7 @@ About to write to /Users/ked/projects/angular2/package.json:
   "description": "The CLiPs Angular2 Front-end",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -138,13 +172,83 @@ Now we need to generate our **bower.json** file. Move to your **app** directory 
 
 ```
 ~/project/app$ bower init
-name 
-description
-main file
-what types of modules does this package expose?
-keywords
-authors (Kedweber <ked@weberstudio.net>) 
+? name CLiPS-FrontEnd
+? description The CLiPs Angular2 Front-end
+? main file
+? what types of modules does this package expose?
+? keywords CLiPs, Angular2, Ionic, Karma, Jasmine, Unit Testing, Mobile, Multi-platform, Educational
+? authors (Kedweber <ked@weberstudio.net>) 
+? license MIT
+? homepage http://kedweber.github.io
+? set currently installed components as dependencies? Yes
+? add commonly ignored files to the ignore list? Yes
+? would you like to mark this package as private which prevents it from being accidentally published to the registry? No
+
+{
+    name: 'CLiPS-FrontEnd',
+    keywords: [
+        'CLiPs',
+        'Angular2',
+        'Ionic',
+        'Karma',
+        'Jasmine',
+        'Unit',
+        'Testing',
+        'Mobile',
+        'Multi-platform',
+        'Educational'
+    ]
+    authors: [
+        'Kedweber <ked@weberstudio.net>'
+    ],
+    description: 'The CLiPs Angular2 Front-end',
+    main: '',
+    moduleType: ,
+    license: 'MIT',
+    homepage: 'http://kedweber.github.io',
+    ignore: [
+        '**/.*',
+        'node_modules',
+        'bower_components',
+        'test',
+        'tests'
+    ]
+}
+
+? Looks good? Yes
+
 ```
+
+#### TypeScript Configuration
+
+See the **Install Angular 2** section if you do not wish to use TypeScript, but prefer Dart or vanilla Javascript. You 
+may also wish to opt for reading the manual to [install Angular 2](https://angular.io/docs/js/latest/quickstart.html) with 
+all of its options.
+
+
+
+#### Install Angular 2
+
+The Angular crew expects you to be able to [install Angular 2](https://angular.io/docs/js/latest/quickstart.html) in 5 minutes. 
+First you will have to decide which language you will use to write your Angular code. I will be using **TypeScript** here, but
+you can chose between:
+
+    Javascript
+    Dart by Google
+    TypeScript by Microsoft and Google
+
+Make sure you have prepared your environment in the previous steps.
+
+    (a) Create the project folder
+    (b) Add package definition and configuration files
+    
+        NPM Package Configuration **package.json**
+        TypeScript compiler configuration file **tsconfig.json***
+        TypeScript definition files indetified by the **typings.json** file
+        SystemJS's configuration file **typings.json**
+
+    (c) Install packages
+    
 
 #### Installing Gulp and Gulp Related Packages Globally
 
