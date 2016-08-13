@@ -10,7 +10,8 @@
 This repository is meant as a skeleton framework for a private production, CLiPs, which is designed to assist educational 
 professionals in the Southeast Asian markets. While providing me with the ability of exposing the public both to the 
 CLiPs project, it will also help others who want to create a multi-platform, responsive mobile/web app (Android and iOS), 
-in Angular 2, while incorporating test driven development in a transpiled hard-typed JavaScript.
+in Angular 2, while incorporating test driven development in a hard-typed JavaScript [TypeScript ~ ECMA 6] transpiled to 
+ECMA 5 (which can also be used in your developments instead of TypeScript).
 
 The database here will be a severally crippled flat JSON file version simply for the sake of example. If you have an interest in this educational 
 profiling/reporting system, please do contact me via the 
@@ -25,7 +26,7 @@ Here are some of the tools we will be using to develop our web and mobile apps.
     * Node Package Manager
     * Bower
 * Core Javascript Environment
-    * Angular 2
+    * Angular 2 (ECMA 6 classes and templates)
     * TypeScript
 * Javascript Piping
     * Gulp
@@ -48,26 +49,34 @@ Here are some of the tools we will be using to develop our web and mobile apps.
     project (folder)
     |
     |__ app
-    |   |- app.component.js
-    |   |- app.module.js
+    |   |- app.component.ts // the Root of the application for typescript projects
+    |   |- app.component.js // for javascript
+    |   |- app.module.js    // root AppModule (NgModule) for typescript
+    |   |- app.module.js    // " same but for javascript
+    |   |- main.ts // bootstrap for typescript
     |   |_ main.js
     |
+    |- package.json  // npm configuration
+    |- tsconfig.json // typescript configuration
+    |- typings.json  // identifies TypeScript definition files
+    |- systemjs.configuration.js  // system configuration for Angular 2
+    |   
     |- index.html
     |_ styles.css
     
 ## Installation
 
-
-
 ### Installing Node Package Manager - NPM
 
-NPM is a package manager that can assist us with the management of our backend services. Verify that you are running 
-at least node v4.x.x and npm 3.x.x by running node -v and npm -v in a terminal/console window. 
+[NodeJS.org](https://nodejs.org/en/download/) provides NPM, which is a package manager that can assist us with the 
+management of our backend services. Verify that you are running at least node v4.x.x and npm 3.x.x by running 
+```node -v``` and ```npm -v``` in a terminal/console window. 
 Older versions produce errors with our Angular 2 on TypeScript environment.
 
 [Update npm](https://docs.npmjs.com/cli/update) packages by issuing the following command. If the **-g** flag is specified,
 this command will update globally installed packages. This will also install missing packages.
-As with all commands that install packages, the **--dev** flag will cause **devDependencies** to be processed as well.
+As with all commands that install packages, the **--dev** flag will cause the **devDependencies** section of our 
+**package.json** file to be to be processed as well.
 
 ```
 npm update [-g] [<pkg>...]
@@ -99,7 +108,7 @@ description: The CLiPs Angular2 Front-end
 entry point: (index.js) gulpfile.js
 test command: karma start --single-run --browsers PhantomJS
 git repository: https://github.com/kedweber/clips-frontend-angular2.git
-keywords: CLiPs, Angular2, Ionic, Karma, Jasmine, Unit Testing, Mobile, Multi-platform, Educational
+keywords: CLiPs Angular2 Ionic Karma Jasmine Unit Testing Mobile Multi-platform Educational
 author: kedweber
 license: (ISC)
 
@@ -139,6 +148,22 @@ About to write to /Users/ked/projects/angular2/package.json:
 
 Is this ok? (yes)
 ```
+
+@TODO update sections by hand
+
+```
+//actual package.json file after editing
+```
+
+Finally, we install all the packages listed in the package.json file by issuing the following command within your 
+project's root folder:
+
+```
+npm install
+```
+
+**NOTE:** Assure there is no ```npm ERR!``` message at the end of the npm install run. 
+It is possible that the **typings** folder will not be created; hence, you will have to do that manually
 
 ### Bower
 

@@ -4,7 +4,15 @@
   "description": "The CLiPs Angular2 Front-end",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "karma start --single-run --browsers PhantomJS"
+    "test": "karma start --single-run --browsers PhantomJS",
+
+    // suggested by Angular group
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ", // execute with "npm start"
+    "lite": "lite-server", // execute static file server for apps using routing with "npm run lite"
+    "postinstall": "typings install", //called by npm automatically after it successfully installed
+    "tsc": "tsc", // execute TypeScript compiler once with "npm run tsc"
+    "tsc:w": "tsc -w", // execute TypeScript compiler with watcher "npm run tsc:w"
+    "typings": "typings" // execute tool seperately with "npm run typings"
   },
   "repository": {
     "type": "git",
@@ -41,16 +49,19 @@
     "@angular/router": "3.0.0-rc.1",
     "@angular/router-deprecated": "2.0.0-rc.2",
     "@angular/upgrade": "2.0.0-rc.5",
-    "systemjs": "0.19.27",
+
+    "systemjs": "0.19.27", // library for module loading
     "core-js": "^2.4.0",
-    "reflect-metadata": "^0.1.3",
+    "reflect-metadata": "^0.1.3", // polyfills
     "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.12",
+    "zone.js": "^0.6.12", // polyfills
+
     "angular2-in-memory-web-api": "0.0.15",
     "bootstrap": "^3.3.6"
   },
   "devDependencies": {
     "bower": "^1.7.9",
+
     // Add Angular dependencies
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
